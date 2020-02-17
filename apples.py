@@ -1,4 +1,5 @@
 import math
+import sys
 casket_size = input("Enter the size of the box (example: 20x10): ")
 (Nstr, Mstr) = casket_size.strip().split("x")
 N = int(Nstr)
@@ -18,12 +19,12 @@ for xy in cooridantes_input.split(" "):
     (xStr, yStr) = xy.replace("(", "").replace(")", "").split(",")
     x = int(xStr)
     y = int(yStr)
-    rotten_coordinates.append((x, y))
+    rotten_coordinates.append((y, x))
     try:
-        casket[y][x] = "X"
+        casket[x-1][y-1] = "X"
     except:
         print("Given coordinates for rotten apples ({},{}) are out of range".format(x, y))
-        #todo: system exit
+        sys.exit(0)
 print(rotten_coordinates)
 
 days_until_return = int(input("After how many days will you come back: "))
@@ -40,7 +41,7 @@ for (x, y) in rotten_coordinates:
                     casket[n][m] = "X"
                 except:
                     print("out of range ({},{})".format(n, m))
-                    
+
 
 print("Rotten apples after {} days:".format(days_until_return))
 printCasket()
