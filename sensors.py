@@ -29,7 +29,7 @@ for current_sensor in current_sensor_list:
             if abs(value1 - value2) > max_error:
                 faulty_sensors.append((x1, y1))
     # lines.insert(lines.index(current_sensor), current_sensor)
-    lines.append(current_sensor)
+    # lines.append(current_sensor)
 
 if faulty_sensors == []:
     print("All sensors are OK.")
