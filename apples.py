@@ -19,9 +19,9 @@ for xy in cooridantes_input.split(" "):
     (xStr, yStr) = xy.replace("(", "").replace(")", "").split(",")
     x = int(xStr)
     y = int(yStr)
-    rotten_coordinates.append((y, x))
+    rotten_coordinates.append((x, y))
     try:
-        casket[x-1][y-1] = "X"
+        casket[y-1][x-1] = "X"
     except:
         print("Given coordinates for rotten apples ({},{}) are out of range".format(x, y))
         sys.exit(0)
