@@ -38,7 +38,7 @@ for (x, y) in rotten_coordinates:
         for n in range(y - i, y + i + 1):
             for m in range(x - i, x + i + 1):
                 try:
-                    casket[n][m] = "X"
+                    casket[n-1][m-1] = "X"
                 except:
                     print("out of range ({},{})".format(n, m))
 
